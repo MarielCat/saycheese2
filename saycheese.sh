@@ -153,7 +153,8 @@ printf "\e[1;92m[\e[0m+\e[1;92m] Starting php server(Turn On Hotspot if on termu
 php -S 0.0.0.0:3333 > /dev/null 2>&1 &
 sleep 2
 printf "\e[1;92m[\e[0m\e[1;77m+\e[1;92m] Starting ngrok server(Hotspot must be started) \e[0m\e[1;77m(http 3333)\e[0m\e[1;92m...\n"
-/usr/local/bin/ngrok http 3333 > /dev/null 2>&1 &sleep 10  #Modified PATH
+/usr/local/bin/ngrok http 3333 > /dev/null 2>&1 &
+sleep 10  #Modified PATH
 #Function modiefied to get correctly the ngrok url
 get_ngrok_url2() {
     local tunnel_info=$(curl -s -N http://127.0.0.1:4040/api/tunnels)
